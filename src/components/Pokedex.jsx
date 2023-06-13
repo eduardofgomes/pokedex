@@ -1,4 +1,5 @@
 import React from "react"
+import Pokemon from "./Pokemon"
 
 const Pokedex = (props) => {
     const {pokemons, loading} = props
@@ -14,7 +15,7 @@ const Pokedex = (props) => {
                 <div className="pokedex-grid">
                     {pokemons.map((pokemon, index) => {
                         return (
-                            <Pokemon />
+                            <Pokemon key={index} pokemon={pokemon}/>
                         )
                     })}
                 </div>

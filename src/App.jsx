@@ -3,7 +3,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Searchbar from './components/Searchbar'
 import Pokedex from './components/Pokedex'
-import { getPokemon } from './Api'
+import { getPokemon, getPokemonData } from './Api'
 
 function App() {
   const [loading, setLoading] = useState(false) 
@@ -12,17 +12,19 @@ function App() {
   const fetchPokemons = async () => {
     try {
       setLoading(true)
-      const result = await getPokemons()
-      setPokemons(result)
+      const data = await getPokemon()
+      const promises = data.results.map(async (pokemon) => {
+        return await getPokemonData(pokemon.url)
+      })
+      const results = await Promise.all(promises)
+      setPokemons(results)
       setLoading(false)
     } catch (error) {
-      console.log("fetchPokemon error: ", error)
+      console.error("fetchPokemon error: ", error)
     }
   }
 
-
   useEffect(() => {
-    console.log("teste")
     fetchPokemons()
   }, [])
 
