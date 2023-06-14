@@ -30,13 +30,19 @@ function App() {
 
   useEffect(() => {
     fetchPokemons()
-  }, [])
+  }, [page])
 
   return (
     <>
       <Navbar />
       <Searchbar />
-      <Pokedex pokemons={pokemons} loading={loading} page={page} totalPages={totalPages}  />
+      <Pokedex 
+        pokemons={pokemons} 
+        loading={loading} 
+        page={page} 
+        totalPages={totalPages}  
+        setPage={setPage}
+      />
     </>
   )
 }
