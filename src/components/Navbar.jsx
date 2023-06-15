@@ -15,7 +15,7 @@ const Navbar = () => {
                         className="navbar-img"
                     />
                 </div>
-                <div>{favoritePokemons.length} ❤</div>
+                <div>{favoritePokemons.length} ❤️</div>
             </nav>
         </>
     )
