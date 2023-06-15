@@ -6,6 +6,7 @@ import Pokedex from './components/Pokedex'
 import { getPokemon, getPokemonData } from './Api'
 import { FavoriteProvider } from "./contexts/FavoriteContext";
 
+const favoritesKey = "f"
 function App() {
   const [loading, setLoading] = useState(false) 
   const [pokemons, setPokemons] = useState([])
@@ -30,6 +31,15 @@ function App() {
     }
   }
 
+  const loadFavoritePokemons = () => {
+    const pokemons = JSON.parse(window.localStorage.getItem(favoritesKey)) || []
+    setFavorites(pokemons)
+  }
+
+  useEffect(() => {
+    loadFavoritePokemons()
+  }, [])
+
   useEffect(() => {
     fetchPokemons()
   }, [page])
@@ -42,6 +52,7 @@ function App() {
     } else {
       updateFavorites.push(name)
     }
+    window.localStorage.setItem(favoriteIndex, JSON.stringify(updateFavorites))
     setFavorites(updateFavorites)
   }
 
