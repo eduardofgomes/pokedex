@@ -1,5 +1,14 @@
 * {
   margin: 0;
+  background-color: black;
+}
+
+.text-white {
+  color: white; 
+}
+
+.card-color > * {
+  background-color: #1a1a1a;
 }
 
 nav {

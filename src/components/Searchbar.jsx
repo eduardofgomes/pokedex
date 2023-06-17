@@ -18,12 +18,11 @@ const Searchbar = (props) => {
         <>
             <div className="searchbar-container">
                 <div className="searchbar">
-                    <input placeholder='search pokemon' onChange={onChangeHandler} />
+                    <input placeholder='search pokemon' onChange={onChangeHandler} className='text-white' />
                 </div>
                 <div className="searchbar-btn">
                     <button onClick={onButtonClickHandler}>Search</button>
                 </div>
-                
             </div>
         </>
     )

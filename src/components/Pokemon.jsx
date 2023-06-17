@@ -9,20 +9,20 @@ const Pokemon = (props) => {
     }
     const heart = favoritePokemons.includes(pokemon.name) ? "❤️" : "🖤";
     return (
-        <div className="pokemon-card">
-            <div className="pokemon-image-container">
+        <div className="pokemon-card card-color">
+            <div className="pokemon-image-container card-color">
                 <img src={pokemon.sprites.front_default} alt={pokemon.name} />
             </div>
-            <div className="card-body">
-                <div className="card-top">
-                    <h3> {pokemon.name} </h3>
-                    <div> {pokemon.id} </div>
+            <div className="card-body card-color">
+                <div className="card-top card-color">
+                    <h3 className="text-white card-color"> {pokemon.name} </h3>
+                    <div className="text-white card-color"> {pokemon.id} </div>
                 </div>
-                <div className="card-bottom">
-                    <div className="pokemon-type">
+                <div className="card-bottom card-color">
+                    <div className="pokemon-type card-color">
                         {pokemon.types.map((type, index) => {
                             return (
-                                <div key={index} className="pokemon-type-text">
+                                <div key={index} className="pokemon-type-text text-white">
                                     {type.type.name}
                                 </div>
                             )
