@@ -7,6 +7,10 @@
   color: white; 
 }
 
+.searchbar {
+  background-color: #1a1a1a;
+}
+
 .card-color > * {
   background-color: #1a1a1a;
 }
