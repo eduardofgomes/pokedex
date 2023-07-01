@@ -14,6 +14,11 @@ const Pokedex = (props) => {
         if(page+1 !== totalPages){
             setPage(page+1)
         }
+
+    const getPokemonDetail = (props) => {
+        const {pokemon} = props
+        
+    }
     }
     return (
         <>
@@ -29,7 +34,7 @@ const Pokedex = (props) => {
             {loading ? (
                 <div>Loading...</div>
             ) : 
-                <div className="pokedex-grid">
+                <div className="pokedex-grid" onClick={getPokemonDetail}>
                     {pokemons.map((pokemon, index) => {
                         return (
                             <Pokemon key={index} pokemon={pokemon}/>
