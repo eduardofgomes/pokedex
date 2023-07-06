@@ -1,10 +1,15 @@
 import React from 'react'
 
-const Modal = (open, children) => {
-    if(!open) return
+const Modal = () => {
+    const [modalIsOpen, setModalIsOpen] = useState(false)
+
+    useEffect(() => {
+        console.log('Modal')
+    }, [modalIsOpen])
+
     return (
         <>
-            <div id="modal${pokemon?.id}" class="modal">
+            <div id={"modal${pokemon?.id}"} class="modal">
                 <div class="modal-content">
                     <div class="modal-close">
                         <span class="close">&times;</span>
