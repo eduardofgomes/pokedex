@@ -16,10 +16,10 @@ const Pokedex = (props) => {
             setPage(page+1)
         }
     }
-    /*const getPokemonDetail = props => {
+    const getPokemonDetail = props => {
         const {pokemon} = props
         console.log(pokemon)
-    }*/
+    }
     return (
         <>
             <div className="pokedex-header">
