@@ -16,10 +16,7 @@ const Pokedex = (props) => {
             setPage(page+1)
         }
     }
-    /*const getPokemonDetail = props => {
-        const {pokemon} = props
-        console.log(pokemon)
-    }*/
+
     return (
         <>
             <div className="pokedex-header">
@@ -38,7 +35,8 @@ const Pokedex = (props) => {
                     {pokemons.map((pokemon, index) => {
                         return (
                             <>
-                                <Pokemon key={index} pokemon={pokemon} onClick={() => setModalIsOpen(true)}/>
+                                <Pokemon key={index} pokemon={pokemon}/>
+                                <Modal key={pokemon.index}/>
                             </>
                         )
                     })}

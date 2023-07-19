@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
 const Modal = (props) => {
-    {pokemon.name, pokemon.id, pokemon}
+    const {pokemon} = props
 
     const [modalIsOpen, setModalIsOpen] = useState(false)
 
@@ -18,7 +18,7 @@ const Modal = (props) => {
                     </div>
                     <div class="modal-information">
                         <h1>{pokemon.name}</h1>
-                        <img src="" class="image-modal text-modal" alt="Image not found" />
+                        <img src={pokemon.other.official-art.front_default} class="image-modal text-modal" alt="Image not found" />
                         <h2 class="text-modal"></h2>
                     </div>
                 </div>

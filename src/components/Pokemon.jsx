@@ -4,7 +4,6 @@ import FavoriteContext from "../contexts/FavoriteContext";
 const Pokemon = (props) => {
     const {favoritePokemons, updateFavoritePokemons} = useContext(FavoriteContext)
     const {pokemon} = props
-    console.log(pokemon.name)
     const onHeartClick = () => {
         updateFavoritePokemons(pokemon.name)
     }
@@ -31,6 +30,9 @@ const Pokemon = (props) => {
                     </div>
                     <button className="pokemon-heart-btn" onClick={onHeartClick}>
                         {heart}
+                    </button>
+                    <button onClick={() => setModalIsOpen(true)}>
+
                     </button>
                 </div>
             </div>
