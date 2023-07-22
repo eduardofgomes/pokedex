@@ -31,9 +31,7 @@ const Pokemon = (props) => {
                     <button className="pokemon-heart-btn" onClick={onHeartClick}>
                         {heart}
                     </button>
-                    <button onClick={() => setModalIsOpen(true)}>
-
-                    </button>
+                    <button onClick={() => setModalIsOpen(true)} key={pokemon.id} />
                 </div>
             </div>
         </div>
