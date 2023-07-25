@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import FavoriteContext from "../contexts/FavoriteContext";
+import Modal from "./Modal"
 
 const Pokemon = (props) => {
     const {favoritePokemons, updateFavoritePokemons} = useContext(FavoriteContext)
@@ -31,7 +32,7 @@ const Pokemon = (props) => {
                     <button className="pokemon-heart-btn" onClick={onHeartClick}>
                         {heart}
                     </button>
-                    <button onClick={() => setModalIsOpen(true)} key={pokemon.id} />
+                    <button onClick={() => setModalIsOpen(true)} key={pokemon.id} className="text-whitegit ">More</button>
                 </div>
             </div>
         </div>

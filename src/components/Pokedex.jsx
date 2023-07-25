@@ -26,7 +26,7 @@ const Pokedex = (props) => {
                     totalPages={totalPages}
                     onLeftClick={onLeftClickHandler}
                     onRightClick={onRightClickHandler}
-        />
+                />
             </div>
             {loading ? (
                 <div>Loading...</div>
