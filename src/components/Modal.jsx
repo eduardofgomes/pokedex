@@ -5,21 +5,25 @@ const Modal = (props) => {
 
     const [modalIsOpen, setModalIsOpen] = useState(false)
 
-    useEffect(() => {
+    const toggleModal = () => {
+        setModal(!modalIsOpen)
+    }
+
+    /*useEffect(() => {
         console.log('Modal')
-    }, [modalIsOpen])
+    }, [modalIsOpen])*/
 
     return (
         <>
-            {modalIsOpen && <div id={"pokemon" + pokemon?.id} class="modal">
-                <div class="modal-content">
-                    <div class="modal-close">
-                        <span class="close">&times;</span>
+            {modalIsOpen && <div id={"pokemon" + pokemon?.id} className="modal" onClick={toggleModal}>
+                <div className="modal-content">
+                    <div className="modal-close">
+                        <span className="close" onClick={toggleModal}>&times;</span>
                     </div>
-                    <div class="modal-information">
+                    <div className="modal-information">
                         <h1>{pokemon.name}</h1>
-                        <img src={pokemon.other.official-art.front_default} class="image-modal text-modal" alt="Image not found" />
-                        <h2 class="text-modal"></h2>
+                        <img src={pokemon.other.official-art.front_default} className="image-modal text-modal" alt="Image not found" />
+                        <h2 className="text-modal"></h2>
                     </div>
                 </div>
             </div>}
